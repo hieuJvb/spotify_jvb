@@ -17,6 +17,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final media = MediaQuery.sizeOf(context);
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back_ios_new)),
+        title: SvgPicture.asset(
+          AppVectors.logo,
+          fit: BoxFit.contain,
+          height: media.height * 0.05,
+        ),
+        centerTitle: true,
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -24,40 +38,38 @@ class _SignUpScreenState extends State<SignUpScreen> {
               vertical: media.height * 0.02, horizontal: media.width * 0.02),
           child: Column(
             children: [
+              Text(
+                "Register",
+                style: kFontTitle(fontSize: 30, color: Colors.black),
+              ),
+              SizedBox(
+                height: media.height * 0.01,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                      onPressed: () {}, icon: Icon(Icons.arrow_back_ios_new)),
-                  const Spacer(),
-                  Center(
-                    child: Container(
-                      height: media.height * 0.2,
-                      width: media.width * 0.5,
-                      child: SvgPicture.asset(
-                        AppVectors.logo,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
+                  Text(
+                    "If you need any support",
+                    style: kFontSubTitle(fontSize: 12, color: AppColors.black),
                   ),
-                  const Spacer(),
+                  SizedBox(
+                    width: media.width * 0.001,
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Click here",
+                        style: kFontSubTitle(
+                            fontSize: 12, color: AppColors.primary),
+                      ))
                 ],
-              ),
-              SizedBox(
-                height: media.height * 0.03,
-              ),
-              Text(
-                "REGISTER",
-                style: kFontTitle(fontSize: 28, color: Colors.black),
-              ),
-              SizedBox(
-                height: media.height * 0.03,
               ),
               TextFormField(
                 // controller: controller.controllerUsername,
                 decoration: InputDecoration(
                   hintText: "Full Name",
                   hintStyle: kFontParagraph(fontSize: 16, color: Colors.grey),
+                  border: OutlineInputBorder()
                 ),
                 // validator: (value) {
                 //   return(value == null || value.trim().isEmpty) ? "Invalid UserName" : null;
