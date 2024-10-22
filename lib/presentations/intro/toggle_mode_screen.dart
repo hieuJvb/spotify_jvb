@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../common/base_button_app.dart';
-import '../../core/assets/app_images.dart';
-import '../../core/assets/app_vector.dart';
+import '../../core/configs/assets/app_images.dart';
+import '../../core/configs/assets/app_vector.dart';
 import '../../utils/const/colors.dart';
 import '../../utils/const/fonts.dart';
 
@@ -66,6 +66,7 @@ class _ToggleModeScreenState extends State<ToggleModeScreen> {
                         child: IconModeWidget(
                           urlVector: AppVectors.moon, title: "Dark Mode",),
                         onTap: () {
+                          print("Switching to Dark Mode");
                           context.read<ChooseModeCubit>().updateTheme(ThemeMode.dark);
                         },),
                       SizedBox(
@@ -73,8 +74,10 @@ class _ToggleModeScreenState extends State<ToggleModeScreen> {
                       ),
                       GestureDetector(
                         child: IconModeWidget(
+
                           urlVector: AppVectors.sun, title: "Light Mode",),
                         onTap: () {
+                          print("Switching to Light Mode");
                           context.read<ChooseModeCubit>().updateTheme(ThemeMode.light);
                         },
                       )

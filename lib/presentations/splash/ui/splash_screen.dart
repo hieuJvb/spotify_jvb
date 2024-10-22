@@ -1,8 +1,8 @@
-import 'package:expenses_tracker/core/assets/app_vector.dart';
 import 'package:expenses_tracker/utils/const/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../core/configs/assets/app_vector.dart';
 import '../../intro/get_started_screen.dart';
 
 

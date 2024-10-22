@@ -45,6 +45,14 @@ dependencies:
   flutter_bloc: ^8.1.6
   hydrated_bloc: ^9.1.5
   path_provider: ^2.1.4
+  equatable: ^2.0.5
+  keyboard_dismisser: ^3.0.0
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+
+#  Dependency injection
+  get_it: ^8.0.0
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +85,21 @@ flutter:
     - assets/vectors/moon_logo.svg
     - assets/vectors/sun_logo.svg
     - assets/images/image_register_login.jpg
+    - assets/vectors/image_register_login.svg
+    - assets/vectors/hide_icon.svg
+    - assets/vectors/icon_apple.svg
+    - assets/vectors/icon_google.svg
+    - assets/vectors/icon_favorite.svg
+    - assets/vectors/icon_discovery.svg
+    - assets/vectors/icon_account.svg
+    - assets/vectors/icon-home.svg
+    - assets/vectors/billish_home.svg
+    - assets/images/image_home.jpg
+    - assets/images/image_home2.jpg
+    - assets/images/image_billie_home.jpg
+    - assets/vectors/icon_play.svg
+    - assets/images/image_home_3.jpg
+    - assets/images/billie_home_png.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

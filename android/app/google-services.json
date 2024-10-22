@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1075792667630",
+    "project_id": "spotify-jvb",
+    "storage_bucket": "spotify-jvb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075792667630:android:14d1c523d56e7968d524ff",
+        "android_client_info": {
+          "package_name": "com.example.expenses_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075792667630-2rkgiia60u4d6d8nlrgs1f22kim5oj0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALP_qtFyWKCHU43QJVzfgGwOajInR6ilE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075792667630-2rkgiia60u4d6d8nlrgs1f22kim5oj0d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1075792667630-5vvba3eo9c1sdpa2b22h6sl7gja9d46b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.expensesTracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

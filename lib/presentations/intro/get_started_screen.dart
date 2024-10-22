@@ -1,12 +1,13 @@
 import 'package:expenses_tracker/common/base_button_app.dart';
-import 'package:expenses_tracker/core/assets/app_images.dart';
 import 'package:expenses_tracker/presentations/intro/toggle_mode_screen.dart';
 import 'package:expenses_tracker/utils/const/colors.dart';
 import 'package:expenses_tracker/utils/const/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/assets/app_vector.dart';
+import '../../core/configs/assets/app_images.dart';
+import '../../core/configs/assets/app_vector.dart';
+
 
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});

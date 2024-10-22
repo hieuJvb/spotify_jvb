@@ -1,11 +1,14 @@
 import 'package:expenses_tracker/common/base_button_app.dart';
-import 'package:expenses_tracker/core/assets/app_images.dart';
-import 'package:expenses_tracker/core/assets/app_vector.dart';
-import 'package:expenses_tracker/presentations/auth/register/ui/sign_up_screen.dart';
+import 'package:expenses_tracker/common/icon_arrow_back.dart';
+import 'package:expenses_tracker/presentations/auth/sign_in/ui/sign_in_screen.dart';
 import 'package:expenses_tracker/utils/const/colors.dart';
 import 'package:expenses_tracker/utils/const/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../core/configs/assets/app_images.dart';
+import '../../../../core/configs/assets/app_vector.dart';
+import '../../sign_up/ui/sign_up_screen.dart';
 
 class SignUpOrLogInScreen extends StatelessWidget {
   const SignUpOrLogInScreen({super.key});
@@ -18,17 +21,14 @@ class SignUpOrLogInScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(Icons.arrow_back_ios_new)),
+        leading: IconArrowBack()
       ),
       body: Stack(
         children: [
           Align(
               alignment: Alignment.bottomLeft,
-              child: Image.asset(AppImages.authBG)),
+            child: Image.asset(AppImages.authBG, fit: BoxFit.cover),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: media.height * 0.05),
             child: Column(
@@ -61,14 +61,17 @@ class SignUpOrLogInScreen extends StatelessWidget {
                         child: BaseButtonApp(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SignUpScreen()));
+                                   builder: (context) => SignUpScreen()));
                             },
                             title: "Register")),
                     SizedBox(
                       width: media.width * 0.2,
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SignInScreen()));
+                        },
                         child: Text(
                           "Sign In",
                           style:
