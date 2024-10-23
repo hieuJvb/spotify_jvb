@@ -20,7 +20,7 @@ class IconArrowBack extends StatelessWidget {
                 color: context.isDarkMode ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.05),
                 shape: BoxShape.circle
             ),
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios_new,
               size: 15,
               // color: context.isDarkMode ? Colors.black : Colors.white,

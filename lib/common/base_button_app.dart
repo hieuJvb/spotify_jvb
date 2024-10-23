@@ -14,14 +14,14 @@ class BaseButtonApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: onPressed,
-        child: Text(
-          title,
-          style: kFontSubTitle(fontSize: 20, color: Colors.white),
-        ),
     style: ElevatedButton.styleFrom(
         minimumSize: Size.fromHeight(height ?? 80),
       backgroundColor: AppColors.primary,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))
-    ),);
+    ),
+        child: Text(
+          title,
+           style: kFontSubTitle(fontSize: 20, color: AppColors.lightBackground),
+        ),);
   }
 }
