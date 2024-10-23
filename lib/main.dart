@@ -1,7 +1,7 @@
 import 'package:expenses_tracker/presentations/choose_mode/bloc/choose_mode_cubit.dart';
 import 'package:expenses_tracker/presentations/dashboard/bloc/dashboard_cubit.dart';
 import 'package:expenses_tracker/presentations/splash/ui/splash_screen.dart';
-import 'package:expenses_tracker/sevice_locator.dart';
+import 'package:expenses_tracker/service_locator.dart';
 import 'package:expenses_tracker/utils/const/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

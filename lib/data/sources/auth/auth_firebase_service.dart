@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:expenses_tracker/data/models/auth/create_user_req.dart';
 import 'package:expenses_tracker/data/models/auth/signin_user_req.dart';
@@ -14,8 +15,9 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
   Future<Either> signIn(SignInUserReq signInUserReq) async {
     try {
 
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+     await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: signInUserReq.email, password: signInUserReq.password);
+
 
       return Right("Đăng nhập thành công");
 
@@ -37,8 +39,16 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
 
     try {
 
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      var data = await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: createUserReq.email, password: createUserReq.password);
+
+
+      // Thêm thông tin vào Firestore
+      await FirebaseFirestore.instance.collection('users').add({
+        "name": createUserReq.fullName,
+        "email": data.user?.email ?? "No Email",
+      });
+
 
       return Right("Đăng ký thành công");
 

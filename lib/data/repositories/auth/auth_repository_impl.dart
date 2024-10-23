@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:expenses_tracker/data/models/auth/create_user_req.dart';
 import 'package:expenses_tracker/data/models/auth/signin_user_req.dart';
 import 'package:expenses_tracker/data/sources/auth/auth_firebase_service.dart';
-import 'package:expenses_tracker/domain/repository/auth/auth_repository.dart';
-import 'package:expenses_tracker/sevice_locator.dart';
+import 'package:expenses_tracker/domain/repositories/auth/auth_repository.dart';
+import 'package:expenses_tracker/service_locator.dart';
 
 class AuthRepositoryImpl extends AuthRepository{
   @override

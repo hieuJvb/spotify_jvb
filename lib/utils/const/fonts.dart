@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import "package:google_fonts/google_fonts.dart";
 
-TextStyle kFontTitle({required double fontSize, required Color color}) {
+TextStyle kFontTitle({required double fontSize, Color? color}) {
   return GoogleFonts.roboto(
       color: color,
       fontSize: fontSize,

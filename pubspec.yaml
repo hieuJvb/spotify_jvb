@@ -50,9 +50,11 @@ dependencies:
   firebase_core: ^3.6.0
   firebase_auth: ^5.3.1
 
+
 #  Dependency injection
   get_it: ^8.0.0
   dartz: ^0.10.1
+  cloud_firestore: ^5.4.4
 
 dev_dependencies:
   flutter_test:
@@ -94,11 +96,8 @@ flutter:
     - assets/vectors/icon_account.svg
     - assets/vectors/icon-home.svg
     - assets/vectors/billish_home.svg
-    - assets/images/image_home.jpg
-    - assets/images/image_home2.jpg
     - assets/images/image_billie_home.jpg
     - assets/vectors/icon_play.svg
-    - assets/images/image_home_3.jpg
     - assets/images/billie_home_png.png
 
   #   - images/a_dot_burr.jpeg

@@ -5,7 +5,6 @@ class PlaylistItem extends StatelessWidget {
   final String artist;
   final String duration;
   final bool isPlaying;
-  final bool isFavorite;
 
   const PlaylistItem({
     Key? key,
@@ -13,7 +12,6 @@ class PlaylistItem extends StatelessWidget {
     required this.artist,
     required this.duration,
     required this.isPlaying,
-    required this.isFavorite,
   }) : super(key: key);
 
   @override

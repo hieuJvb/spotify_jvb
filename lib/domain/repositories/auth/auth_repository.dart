@@ -9,5 +9,4 @@ abstract class AuthRepository{
     //Right: Thành công
     //Left: Thất bại
     Future<Either> signup(CreateUserReq createUserReq);
-
 }

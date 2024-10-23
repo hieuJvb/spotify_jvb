@@ -11,7 +11,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 
 import '../../../../core/configs/assets/app_vector.dart';
-import '../../../../sevice_locator.dart';
+import '../../../../service_locator.dart';
 import '../../sign_up/ui/sign_up_screen.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -24,6 +24,14 @@ class SignInScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignInScreen> {
   final TextEditingController controllerEmail = TextEditingController();
   final TextEditingController controllerPassword = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    controllerPassword.dispose();
+    controllerEmail.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

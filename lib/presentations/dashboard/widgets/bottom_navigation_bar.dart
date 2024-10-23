@@ -11,6 +11,7 @@ class BottomNavigationBarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return BottomNavigationBar(
       currentIndex: context.watch<DashboardCubit>().state is DashboardTabChanged
           ? (context.read<DashboardCubit>().state as DashboardTabChanged).index
@@ -19,6 +20,8 @@ class BottomNavigationBarScreen extends StatelessWidget {
         context.read<DashboardCubit>().changeTab(index);
       },
       selectedItemColor: AppColors.primary,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
       unselectedItemColor: Colors.grey,
       type: BottomNavigationBarType.fixed,
       items: [
@@ -56,19 +59,16 @@ class BottomNavigationBarScreen extends StatelessWidget {
     required bool isSelected,
   }) {
     return BottomNavigationBarItem(
-      icon: Stack(
+      icon: Column(
         children: [
-          icon,
           if (isSelected)
-            Positioned(
-              top: -5,
-              left: 0,
-              right: 0,
-              child: Container(
-                height: 4,
-                color: AppColors.primary, // Màu vệt xanh
-              ),
+            Container(
+              height: 4,
+              width: 20,
+              color: AppColors.primary, // Màu vệt xanh
             ),
+          SizedBox(height: 15,),
+          icon,
         ],
       ),
       label: label,
