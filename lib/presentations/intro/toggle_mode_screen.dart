@@ -1,9 +1,11 @@
+import 'package:expenses_tracker/common/icon_arrow_back.dart';
 import 'package:expenses_tracker/presentations/auth/sign_up_or_log_in/ui/sign_up_or_log_in.dart';
 import 'package:expenses_tracker/presentations/choose_mode/bloc/choose_mode_cubit.dart';
 import 'package:expenses_tracker/presentations/intro/widgets/icon_mode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../common/base_button_app.dart';
 import '../../core/configs/assets/app_images.dart';

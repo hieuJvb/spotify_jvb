@@ -5,7 +5,8 @@ import 'package:expenses_tracker/domain/repositories/auth/auth_repository.dart';
 import 'package:expenses_tracker/domain/repositories/song/song_repository.dart';
 import 'package:expenses_tracker/domain/usecases/auth/sign_in_usecase.dart';
 import 'package:expenses_tracker/domain/usecases/auth/sign_up_usecase.dart';
-import 'package:expenses_tracker/domain/usecases/song/get_news_song.dart';
+import 'package:expenses_tracker/domain/usecases/song/get_list_song_use_case.dart';
+import 'package:expenses_tracker/domain/usecases/song/get_news_song_use_case.dart';
 import 'package:get_it/get_it.dart';
 import 'data/sources/auth/auth_firebase_service.dart';
 
@@ -26,4 +27,6 @@ Future<void> initializeDependencies() async{
   sl.registerSingleton<SongRepository>(SongRepositoryImpl());
 
   sl.registerSingleton<GetNewsSongUseCase>(GetNewsSongUseCase());
+
+  sl.registerSingleton<GetPlayListUseCase>(GetPlayListUseCase());
 }

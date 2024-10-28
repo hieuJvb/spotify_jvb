@@ -27,11 +27,11 @@ class NewsSongLoaded extends NewsSongState {
 
 class NewsSongLoadFailure extends NewsSongState {
 
-  // final String message;
-  //
-  // const NewsSongLoadFailure({required this.message});
-  //
-  // @override
-  // // TODO: implement props
-  // List<Object?> get props => [message];
+  final String message;
+
+  const NewsSongLoadFailure({required this.message});
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [message];
 }

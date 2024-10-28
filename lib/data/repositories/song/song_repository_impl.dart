@@ -10,4 +10,9 @@ class SongRepositoryImpl extends SongRepository{
     return sl<SongFirebaseService>().getNewsSongs();
   }
 
+  @override
+  Future<Either> getPlayList() {
+    return sl<SongFirebaseService>().getPlayList();
+  }
+
 }

@@ -1,4 +1,4 @@
-import 'package:expenses_tracker/domain/usecases/song/get_news_song.dart';
+import 'package:expenses_tracker/domain/usecases/song/get_news_song_use_case.dart';
 import 'package:expenses_tracker/presentations/home/bloc/news_song_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,13 +15,13 @@ class NewsSongCubit extends Cubit<NewsSongState> {
       //fold xử lý kết quả
       returnedSongs.fold(
               (failure) {
-                emit(NewsSongLoadFailure());
+                emit(NewsSongLoadFailure(message: failure));
               },
               (songs) {
                 emit(NewsSongLoaded(songs: songs));
               });
-    } catch (e) {
-
+    } catch (e)  {
+         print(e);
     }
   }
 }

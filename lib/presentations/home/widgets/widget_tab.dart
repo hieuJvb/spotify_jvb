@@ -4,28 +4,10 @@ import 'package:get/get.dart';
 import '../../../utils/const/colors.dart';
 import '../../../utils/const/fonts.dart';
 
-class WidgetTab extends StatefulWidget {
-  const WidgetTab({super.key});
+class WidgetTab extends StatelessWidget {
+  const WidgetTab({super.key, required this.tabController});
 
-  @override
-  State<WidgetTab> createState() => _WidgetTabState();
-}
-
-class _WidgetTabState extends State<WidgetTab> with SingleTickerProviderStateMixin {
-  late TabController tabController;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    tabController = TabController(length: 4, vsync: this);
-  }
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    tabController.dispose();
-  }
+  final TabController tabController;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +23,7 @@ class _WidgetTabState extends State<WidgetTab> with SingleTickerProviderStateMix
         Text("Video", style: kFontTitle(fontSize: 20)),
         Text("Artists", style: kFontTitle(fontSize: 20)),
         Text("Podcast", style: kFontTitle(fontSize: 20)),
+
       ],
     );
   }

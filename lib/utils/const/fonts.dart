@@ -9,7 +9,7 @@ TextStyle kFontTitle({required double fontSize, Color? color}) {
   );
 }
 
-TextStyle kFontSubTitle({required double fontSize, required Color color}) {
+TextStyle kFontSubTitle({required double fontSize, Color? color}) {
   return GoogleFonts.roboto(
       color: color,
       fontSize: fontSize,
@@ -17,7 +17,7 @@ TextStyle kFontSubTitle({required double fontSize, required Color color}) {
   );
 }
 
-TextStyle kFontParagraph({required double fontSize, required Color color}) {
+TextStyle kFontParagraph({required double fontSize, Color? color}) {
   return GoogleFonts.roboto(
       color: color,
       fontSize: fontSize,

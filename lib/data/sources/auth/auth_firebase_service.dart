@@ -31,7 +31,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         message = "Sai mật khẩu";
       }
 
-      return Left(message);
+      return Left(message, );
     }
   }
   @override
@@ -50,7 +50,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       });
 
 
-      return Right("Đăng ký thành công");
+      return Right("Đăng ký thành công",);
 
     } on FirebaseAuthException catch (e) {
 

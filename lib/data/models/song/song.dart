@@ -4,7 +4,7 @@ import 'package:expenses_tracker/domain/entities/song/song.dart';
 class SongModel {
   String? title;
   String? artist;
-  num? duration;
+  String? duration;
   Timestamp? releaseDate;
 
   SongModel({required this.title,
