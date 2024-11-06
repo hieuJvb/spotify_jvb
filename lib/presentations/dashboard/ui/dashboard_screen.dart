@@ -10,29 +10,29 @@ class DashboardScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => DashboardCubit(),
       child: Scaffold(
-        body: SafeArea(
-          child: BlocBuilder<DashboardCubit, DashboardState>(
-            builder: (context, state) {
-              int index = 0;
+          body: SafeArea(
+            child: BlocBuilder<DashboardCubit, DashboardState>(
+              builder: (context, state) {
+                int index = 0;
 
-              if (state is DashboardTabChanged) {
-                index = state.index;
-              }
+                if (state is DashboardTabChanged) {
+                  index = state.index;
+                }
 
-              return IndexedStack(
-                index: index,
-                children: [
-                  HomeScreen(),
-                  Container(),
-                  Container(),
-                  Container()
-                ],
-              );
-            },
+                return IndexedStack(
+                  index: index,
+                  children: [
+                    HomeScreen(),
+                    Container(),
+                    Container(),
+                    Container()
+                  ],
+                );
+              },
+            ),
           ),
-        ),
-        bottomNavigationBar: Container(
-            child: BottomNavigationBarScreen())
+          bottomNavigationBar: Container(
+              child: BottomNavigationBarScreen())
       ),
     );
   }

@@ -25,43 +25,41 @@ class _NewsSongState extends State<NewsSong> {
   Widget build(BuildContext context) {
     final media = MediaQuery.sizeOf(context);
 
-    return Padding(
-      padding: EdgeInsets.only(right: media.width * 0.0001),
-      child: BlocProvider(
-        create: (context) => NewsSongCubit()..getNewsSongs(),
-        child: BlocBuilder<NewsSongCubit, NewsSongState>(
-          builder: (context, state) {
-            // Xử lý khi đang ở trạng thái đang tải
-            if (state is NewsSongLoading) {
-              return const Center(child: CircularProgressIndicator());
+    return BlocProvider(
+      create: (context) => NewsSongCubit()..getNewsSongs(),
+      child: BlocBuilder<NewsSongCubit, NewsSongState>(
+        builder: (context, state) {
+          // Xử lý khi đang ở trạng thái đang tải
+          if (state is NewsSongLoading) {
+            return const Center(child: CircularProgressIndicator());
 
-              // Trạng thái lỗi
-            } else if (state is NewsSongLoadFailure) {
-              return Center(
-                child: Text(
-                  state.message,
-                  style: kFontTitle(
-                    fontSize: 20,
-                    color: context.isDarkMode ? Colors.white : Colors.black,
-                  ),
+            // Trạng thái lỗi
+          } else if (state is NewsSongLoadFailure) {
+            return Center(
+              child: Text(
+                state.message,
+                style: kFontTitle(
+                  fontSize: 20,
+                  color: context.isDarkMode ? Colors.white : Colors.black,
                 ),
-              );
+              ),
+            );
 
-              // Trạng thái đã được tải
-            } else if (state is NewsSongLoaded) {
-              final songs = state.songs; // Lấy danh sách bài hát từ state
+            // Trạng thái đã được tải
+          } else if (state is NewsSongLoaded) {
+            final songs = state.songs; // Lấy danh sách bài hát từ state
 
-              return ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(width: 14),
-                physics: const BouncingScrollPhysics(),
-                itemCount: songs.length,
-                reverse: true,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (ctx, index) {
-                  final song = songs[index];
-                  return GestureDetector(
-                    onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (ctx) => MusicSreen(song: song,))),
+            return ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: songs.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (ctx, index) {
+                final song = songs[index];
+                return GestureDetector(
+                  onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => MusicSreen(song: song,))),
+                  child: Container(
+                    margin: EdgeInsets.all(8),
                     child: Stack(
                       children: [
                         Column(
@@ -75,7 +73,7 @@ class _NewsSongState extends State<NewsSong> {
                                 image: DecorationImage(
                                   image: CachedNetworkImageProvider(
                                     "${AppUrls.coversFireStorage}${song.artist}.png?${AppUrls.mediaAlt}",
-
+                    
                                   ),
                                   fit: BoxFit.cover,
                                 ),
@@ -103,20 +101,20 @@ class _NewsSongState extends State<NewsSong> {
                         ),
                         Positioned(
                           child: ButtonPlay(),
-                          right: -1,
-                          bottom: 80,
+                          right: 2,
+                          bottom: 60,
                           // right: 0,
                         )
                       ],
                     ),
-                  );
-                },
-              );
-            } else {
-              return const SizedBox();
-            }
-          },
-        ),
+                  ),
+                );
+              },
+            );
+          } else {
+            return const SizedBox();
+          }
+        },
       ),
     );
   }

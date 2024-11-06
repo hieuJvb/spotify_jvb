@@ -15,7 +15,7 @@ class WidgetTab extends StatelessWidget {
       controller: tabController,
       dividerColor: Colors.transparent,
       labelColor: context.isDarkMode ? AppColors.white : AppColors.black,
-      unselectedLabelColor: AppColors.grey.withOpacity(0.3),
+      unselectedLabelColor: AppColors.grey,
       indicatorColor: AppColors.primary,
       isScrollable: true,
       tabs: [

@@ -22,9 +22,6 @@ class MusicPlayerLoadFailure extends MusicPlayerState{
   List<Object?> get props => [message];
 }
 
-// class MusicPlayerLoaded extends MusicPlayerState{
-// }
-
 class MusicPlayerLoaded extends MusicPlayerState {
   final Duration position;
   final Duration duration;

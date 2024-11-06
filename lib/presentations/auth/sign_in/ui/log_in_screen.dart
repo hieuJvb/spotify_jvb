@@ -128,6 +128,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
 
                             SizedBox(height: media.height * 0.02),
+                            
                             TextFieldLine(
                               controller: _controllerEmail,
                               hintText: "Enter Email",
@@ -243,7 +244,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                 SizedBox(width: media.width * 0.15),
                                 IconButton(
                                   onPressed: () {},
-                                  icon: SvgPicture.asset(AppVectors.iconApple),
+                                  icon: context.isDarkMode
+                                      ? SvgPicture.asset(AppVectors.iconAppleDark)
+                                      : SvgPicture.asset(
+                                      AppVectors.iconAppleLight),
+
                                 ),
                               ],
                             ),

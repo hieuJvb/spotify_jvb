@@ -13,8 +13,6 @@ class PlayListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final media = MediaQuery.sizeOf(context);
-
     return BlocProvider(
       create: (context) => PlayListCubit()..getPlayList(),
       child: BlocBuilder<PlayListCubit, PlayListState>(
@@ -39,45 +37,46 @@ class PlayListItem extends StatelessWidget {
             return ListView.builder(
                 itemCount: playLists.length,
                 physics: BouncingScrollPhysics(),
-                reverse: true,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
                   final playlist = playLists[index];
 
                   return GestureDetector(
                     onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => MusicSreen(song: playlist,))),
-                    child: ListTile(
-                      leading: ButtonPlay(),
-                      title: Text(
-                        playlist.title,
-                        style: kFontTitle(
-                            fontSize: 16,
-                            color: context.isDarkMode
-                                ? Colors.white
-                                : Colors.black),
+                    child: Container(
+                      child: ListTile(
+                        leading: ButtonPlay(),
+                        title: Text(
+                          playlist.title,
+                          style: kFontTitle(
+                              fontSize: 16,
+                              color: context.isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
+                        ),
+                        subtitle: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              playlist.artist,
+                              style: kFontSubTitle(
+                                  fontSize: 12,
+                                  color:
+                                      context.isDarkMode ? Colors.white : Colors.black),
+                            ),
+                            Text(
+                              playlist.duration,
+                              style: kFontSubTitle(
+                                  fontSize: 15,
+                                  color: context.isDarkMode
+                                      ? Colors.white
+                                      : Colors.black),
+                            )
+                          ],
+                        ),
+                        trailing: IconButton(
+                            onPressed: () {}, icon: Icon(Icons.favorite), alignment: Alignment.bottomCenter,),
                       ),
-                      subtitle: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            playlist.artist,
-                            style: kFontSubTitle(
-                                fontSize: 12,
-                                color:
-                                    context.isDarkMode ? Colors.white : Colors.black),
-                          ),
-                          Text(
-                            playlist.duration,
-                            style: kFontSubTitle(
-                                fontSize: 15,
-                                color: context.isDarkMode
-                                    ? Colors.white
-                                    : Colors.black),
-                          )
-                        ],
-                      ),
-                      trailing: IconButton(
-                          onPressed: () {}, icon: Icon(Icons.favorite), alignment: Alignment.bottomCenter,),
                     ),
                   );
                 });

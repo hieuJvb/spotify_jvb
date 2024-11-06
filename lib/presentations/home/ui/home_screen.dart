@@ -46,17 +46,21 @@ class _HomeScreenState extends State<HomeScreen>
       children: [
         Scaffold(
           appBar: CustomAppBar(
-              icon: IconButton(onPressed: (){}, icon: Icon(Icons.search)),
-              title: SvgPicture.asset(
-                AppVectors.logo,
-                fit: BoxFit.contain,
-                height: media.height * 0.04,
-              ),
-              onSearchPressed: () {},
-              onMorePressed: () {},),
+            icon: IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            title: SvgPicture.asset(
+              AppVectors.logo,
+              fit: BoxFit.contain,
+              height: media.height * 0.04,
+            ),
+            onSearchPressed: () {},
+            onMorePressed: () {},
+          ),
           body: Padding(
-            padding: EdgeInsets.symmetric(
-                vertical: media.height * 0.03, horizontal: media.width * 0.06),
+            padding: EdgeInsets.only(
+              top: media.height * 0.03,
+              left: media.width * 0.06,
+              right: media.width * 0.06,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -105,15 +109,14 @@ class _HomeScreenState extends State<HomeScreen>
                 ),
 
                 //playlist
-                Flexible(flex: 1, child: PlayListItem()),
-
+                Expanded(child: PlayListItem()),
               ],
             ),
           ),
         ),
         Positioned(
-          top: -25,
-          right: -40,
+          top: -27,
+          right: -35,
           height: media.height * 0.3,
           child: Image.asset(AppImages.billieHome),
         )

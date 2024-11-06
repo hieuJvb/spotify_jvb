@@ -6,5 +6,6 @@ class AppImages{
   static const String imageToggleMode = "${basePath}toggle_mode_image$format";
   static const String authBG = "${basePath}image_register_login$format";
   static const String billieHome = "${basePath}billie_home_png.png";
+  static const String billieAuth = "${basePath}billie_auth.png";
 
 }

@@ -75,6 +75,19 @@ class MusicPlayerCubit extends Cubit<MusicPlayerState> {
       emit(MusicPlayerLoadFailure(message: e.toString()));
     }
   }
+  Future<void> seekForward() async {
+    final newPosition = player.position + const Duration(seconds: 5);
+    if (newPosition < (player.duration ?? Duration.zero)) {
+      await player.seek(newPosition);
+    }
+    emitMusicState();
+  }
+
+  Future<void> seekBackward() async {
+    final newPosition = player.position - const Duration(seconds: 5);
+    await player.seek(newPosition >= Duration.zero ? newPosition : Duration.zero);
+    emitMusicState();
+  }
 
   void emitMusicState({Duration? position, Duration? duration}) {
     emit(
@@ -88,7 +101,7 @@ class MusicPlayerCubit extends Cubit<MusicPlayerState> {
 
   Future<void> playOrPause() async {
     await player.playing ? player.pause() : player.play();
-    emitMusicState(); // Cập nhật trạng thái sau khi play/pause
+    emitMusicState();
   }
 
   @override

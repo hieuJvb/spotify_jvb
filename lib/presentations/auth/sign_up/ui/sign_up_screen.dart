@@ -222,7 +222,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               SizedBox(width: media.width * 0.15),
                               IconButton(
                                 onPressed: () {},
-                                icon: SvgPicture.asset(AppVectors.iconApple),
+                                icon: context.isDarkMode
+                                    ? SvgPicture.asset(AppVectors.iconAppleDark)
+                                    : SvgPicture.asset(
+                                        AppVectors.iconAppleLight),
                               ),
                             ],
                           ),
